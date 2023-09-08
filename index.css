@@ -1,0 +1,311 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: #f0f2f0;
+  background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+.container,
+#graphContainer {
+  height: 100%;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.container::-webkit-scrollbar{
+  display: none;
+}
+#downloadButton,
+#fileAcceptor button,
+#graphContainer >.buttons #editingBtns {
+  text-align: center;
+  height: 50px;
+  width: max-content;
+  padding: 0 15px;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#fileAcceptor {
+  height: 50vh;
+  width: 50vw;
+  border: 2px solid;
+  border-radius: 10px;
+  
+  background: rgba( 255, 255, 255, 0.35 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10px );
+-webkit-backdrop-filter: blur( 10px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+#fileAcceptor h1 {
+  text-align: center;
+  margin-top: 5vh;
+}
+#fileAcceptor form {
+  width: 100%;
+  height: 42vh;
+  max-height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#fileAcceptor form input[type="file"] {
+  /* transform: translate(6vw, 4vh); */
+  width: max-content;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+#fileAcceptor form input[type="file"]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #3460c0;
+  padding: 8px 20px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s ease-in-out;
+}
+#fileAcceptor input[type="file"]::file-selector-button:hover {
+  background: #0d45a5;
+}
+#fileAcceptor form input[type="text"] {
+  max-width: 95%;
+  min-width: max-content;
+  max-height: 100%;
+  width: 30%;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  padding: 10px 10px;
+  background-color: transparent;
+  text-align: center;
+}
+#fileAcceptor form input[type="text"]::placeholder {
+  color: black;
+  text-align: center;
+}
+#fileAcceptor button:hover {
+  background-color: antiquewhite;
+}
+#downloadButton:hover,
+#graphContainer >.buttons #editingBtns:hover {
+  background-color: #cdd0dc;
+}
+.optionsContainer {
+  background-color: red;
+  width: 80vw;
+  height: 50vh;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#colorHandler,
+#sizeHandler,
+#fontSizeHandler {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+#colorHandler > div,
+#sizeHandler > div,
+#fontSizeHandler > div {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+#colorHandler > h4,
+#sizeHandler > h4,
+#fontSizeHandler > h4 {
+  text-align: center;
+  margin: 0 0 10px 0;
+  text-decoration: underline;
+}
+#colorHandler > div input[type="color"] {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+#sizeHandler > div input[type="number"],
+#fontSizeHandler > div input[type="number"] {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+}
+#colorHandler > div > button,
+#sizeHandler > div > button,
+#fontSizeHandler > div > button,
+#rootNameEditor > button {
+  height: 40px;
+  width: max-content;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 10px;
+}
+#colorHandler > div > button:hover,
+#sizeHandler > div > button:hover,
+#fontSizeHandler > div > button:hover,
+#rootNameEditor > button:hover {
+  background-color: rgb(81 98 159);
+  color: #9f9fb1;
+}
+
+#rootNameEditor {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+#rootNameEditor > input[type="text"] {
+  width: 25vw;
+  height: 30px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+}
+#rootNameEditor > input[type="text"]::placeholder {
+  color: black;
+}
+#rootNameEditor > button {
+  padding: 0 10px;
+  margin-left: 10px;
+}
+
+
+#graphContainer >.buttons{
+  width: 50%;
+  height: max-content;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  margin: auto;
+}
+
+#graphContainer >.buttons #editingBtns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+#graphContainer >.buttons #editingBtns> #closeBtn{
+  width: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#editingBtns> #closeBtn span{
+  height: 1px;
+  width: 30px;
+  border: 2px solid
+}
+#editingBtns> #closeBtn span:first-child{
+  transform: rotate(45deg) translate(2px, 0px);
+}
+#editingBtns> #closeBtn span:nth-child(2){
+  transform: rotate(-45deg) translate(2px, 0px);
+}
+
+@media screen and (max-width: 1024px) {
+  #fileAcceptor {
+    width: 96vw;
+    height: 57vh;
+    border: 2px solid;
+  }
+  #fileAcceptor h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #fileAcceptor {
+    width: 96vw;
+    height: 57vh;
+  }
+  #fileAcceptor h1 {
+    font-size: 1.5rem;
+  }
+
+  .optionsContainer {
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 460px) {
+  .optionsContainer {
+    height: 40vh;
+  }
+  .optionsContainer label {
+    font-size: 0.6rem;
+  }
+  .optionsContainer > form > h4 {
+    font-size: 0.8rem;
+  }
+  #colorHandler > div,
+  #sizeHandler > div,
+  #fontSizeHandler > div {
+    width: 100%;
+  }
+  #sizeHandler button,
+  #clrHandler button,
+  #fontSizeHandler button {
+    height: 70%;
+  }
+  #colorHandler > div input[type="color"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  #colorHandler > div > button,
+  #sizeHandler > div > button,
+  #fontSizeHandler > div > button,
+  #rootNameEditor > button {
+    font-size: 0.6rem;
+    height: 35px;
+    padding: 0 6px;
+  }
+  #sizeHandler > div input[type="number"],
+  #fontSizeHandler > div input[type="number"] {
+    width: 30px;
+    height: 20px;
+    font-size: 0.6rem;
+  }
+}

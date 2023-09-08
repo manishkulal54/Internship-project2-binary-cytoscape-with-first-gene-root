@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- <div id="fileAcceptor" style="display: none;"> -->
+      <div id="fileAcceptor">
+        <h1>Cytoscape Converter - Binary</h1>
+        <h4 style="text-align: center;margin-top: 10px;">Kinase with highest frequency</h4>
+        <form action="">
+          <input type="file" name="" id="fileInputBtn" accept=".xlsx, .xls" />
+          <input type="text" name="" id="sheetIndexInpt" placeholder="Enter the sheet number" autocomplete="off">
+          <button type="submit" id="convertBtn">Convert to Cytoscape</button>
+        </form>
+      </div>
+
+      <div id="graphContainer" style="display: none">
+        <!-- <div id="graphContainer"> -->
+        <svg id="chart"></svg>
+        <div
+          class="optionsContainer"
+          id="optionsContainer"
+          style="display: none"
+        >
+          <form action="" id="colorHandler">
+            <h4>Change color</h4>
+            <div>
+              <div>
+                <label for="clrInpt1">Path color</label>
+                <input type="color" name="" id="clrInpt1" />
+              </div>
+              <div>
+                <label for="clrInpt2">UUDD</label>
+                <input type="color" name="" id="clrInpt2" />
+              </div>
+              <div>
+                <label for="clrInpt3">UDDU</label>
+                <input type="color" name="" id="clrInpt3" />
+              </div>
+              <div>
+                <label for="clrInpt4">UUDD+UDDU</label>
+                <input type="color" name="" id="clrInpt4" />
+              </div>
+              <button id="changeClr">Change Color</button>
+            </div>
+          </form>
+          <form action="" id="sizeHandler">
+            <h4>Change Size</h4>
+            <div>
+              <div>
+                <lable for="number1">Root Box Size</lable>
+                <input type="number" name="" id="number1" />
+              </div>
+              <div>
+                <lable for="number2">Box size</lable>
+                <input type="number" name="" id="number2" />
+              </div>
+              <div>
+                <lable for="number3">Site Radius size</lable>
+                <input type="number" name="" id="number3" />
+              </div>
+              <div>
+                <lable for="number4">SVG size</lable>
+                <input type="number" name="" id="number4" />
+              </div>
+              <button id="changeSize">Change Size</button>
+            </div>
+          </form>
+          <form action="" id="fontSizeHandler">
+            <h4>Change Font Size</h4>
+            <div>
+              <div>
+                <lable for="fsize1">Root</lable>
+                <input type="number" name="" id="fsize1" />
+              </div>
+              <div>
+                <lable for="fsize2">Genes</lable>
+                <input type="number" name="" id="fsize2" />
+              </div>
+              <div>
+                <lable for="fsize3">Sites</lable>
+                <input type="number" name="" id="fsize3" />
+              </div>
+              <button id="changeFontSize">Change Font size</button>
+            </div>
+          </form>
+        </div>
+        <div class="buttons">
+          <button id="editingBtns">
+            <div id="editBtn">
+              Edit
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-pencil-square"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
+                />
+              </svg>
+            </div>
+            <div id="closeBtn" style="display: none">
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <button id="downloadButton">Download SVG</button>
+        </div>
+        <!-- <p style="text-align: center;"> <button id="downloadButton">Download SVG</button></p> -->
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="index.js"></script>
+</html>
