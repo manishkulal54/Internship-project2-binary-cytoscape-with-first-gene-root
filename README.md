@@ -1,5 +1,5 @@
 # Internship-project1-binary-cytoscape-with-first-gene-root
-It is d3js project to convert cytoscape svg 
+It is d3js project to convert Cytoscape graph svg 
 Input file must be a excel file and it sholud have the fields same as following
   
   
