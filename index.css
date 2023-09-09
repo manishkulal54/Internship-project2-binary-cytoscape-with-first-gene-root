@@ -7,9 +7,22 @@
 body {
   overflow: hidden;
   background: #f0f2f0;
-  background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-image: linear-gradient(
+    to left top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
 }
-.container,
 #graphContainer {
   height: 100%;
   width: 100vw;
@@ -19,19 +32,24 @@ body {
 }
 .container {
   height: 100vh;
+  max-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   display: flex;
   overflow-x: hidden;
   overflow-y: scroll;
 }
-.container::-webkit-scrollbar{
+.container::-webkit-scrollbar {
   display: none;
 }
 #downloadButton,
 #fileAcceptor button,
-#graphContainer >.buttons #editingBtns {
+#graphContainer > .buttons #editingBtns {
   text-align: center;
   height: 50px;
-  width: max-content;
+  max-width: 50vw;
+  min-width: 26%;
   padding: 0 15px;
   background: transparent;
   border-radius: 10px;
@@ -39,17 +57,16 @@ body {
 }
 #fileAcceptor {
   height: 50vh;
+  min-height: 35vh;
   width: 50vw;
   border: 2px solid;
   border-radius: 10px;
-  
-  background: rgba( 255, 255, 255, 0.35 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 10px );
--webkit-backdrop-filter: blur( 10px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 #fileAcceptor h1 {
   text-align: center;
@@ -57,16 +74,15 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 #fileAcceptor form {
   width: 100%;
-  height: 42vh;
-  max-height: 70%;
+  height: 38vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 #fileAcceptor form input[type="file"] {
-  /* transform: translate(6vw, 4vh); */
-  width: max-content;
+  max-width: max-content;
+  width: 80%;
   border: 2px solid;
   border-radius: 10px;
   padding: 10px 20px;
@@ -85,19 +101,20 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 #fileAcceptor input[type="file"]::file-selector-button:hover {
   background: #0d45a5;
 }
-#fileAcceptor form input[type="text"] {
+#fileAcceptor> form input[type="text"] {
   max-width: 95%;
   min-width: max-content;
   max-height: 100%;
   width: 30%;
   border: none;
   border-bottom: 1px solid;
+  /* border-radius: 10px; */
   outline: none;
   padding: 10px 10px;
   background-color: transparent;
   text-align: center;
 }
-#fileAcceptor form input[type="text"]::placeholder {
+#fileAcceptor >form input[type="text"]::placeholder {
   color: black;
   text-align: center;
 }
@@ -105,13 +122,14 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   background-color: antiquewhite;
 }
 #downloadButton:hover,
-#graphContainer >.buttons #editingBtns:hover {
+#graphContainer > .buttons #editingBtns:hover {
   background-color: #cdd0dc;
 }
 .optionsContainer {
   background-color: red;
   width: 80vw;
   height: 50vh;
+  max-height: 61vh;
   margin: auto;
   margin-bottom: 20px;
   display: flex;
@@ -209,8 +227,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   margin-left: 10px;
 }
 
-
-#graphContainer >.buttons{
+#graphContainer > .buttons {
   width: 50%;
   height: max-content;
   background-color: transparent;
@@ -221,30 +238,31 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   margin: auto;
 }
 
-#graphContainer >.buttons #editingBtns{
+#graphContainer > .buttons #editingBtns {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 15px;
 }
-#graphContainer >.buttons #editingBtns> #closeBtn{
+#graphContainer > .buttons #editingBtns > #closeBtn {
   width: 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-#editingBtns> #closeBtn span{
+#editingBtns > #closeBtn span {
   height: 1px;
   width: 30px;
-  border: 2px solid
+  border: 2px solid;
 }
-#editingBtns> #closeBtn span:first-child{
+#editingBtns > #closeBtn span:first-child {
   transform: rotate(45deg) translate(2px, 0px);
 }
-#editingBtns> #closeBtn span:nth-child(2){
+#editingBtns > #closeBtn span:nth-child(2) {
   transform: rotate(-45deg) translate(2px, 0px);
 }
+
 
 @media screen and (max-width: 1024px) {
   #fileAcceptor {

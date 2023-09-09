@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="description" content="Cytoscape svg generator for binary data" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, D3JS" />
+    <meta name="author" content="Manishkulal" />
+    <title>Cytoscape Converter - Binary</title>
     <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
     <div class="container">
-      <!-- <div id="fileAcceptor" style="display: none;"> -->
       <div id="fileAcceptor">
         <h1>Cytoscape Converter - Binary</h1>
         <h4 style="text-align: center;margin-top: 10px;">Kinase with highest frequency</h4>
@@ -21,7 +23,6 @@
       </div>
 
       <div id="graphContainer" style="display: none">
-        <!-- <div id="graphContainer"> -->
         <svg id="chart"></svg>
         <div
           class="optionsContainer"
@@ -54,19 +55,19 @@
             <h4>Change Size</h4>
             <div>
               <div>
-                <lable for="number1">Root Box Size</lable>
+                <label for="number1">Root Box Size</label>
                 <input type="number" name="" id="number1" />
               </div>
               <div>
-                <lable for="number2">Box size</lable>
+                <label for="number2">Box size</label>
                 <input type="number" name="" id="number2" />
               </div>
               <div>
-                <lable for="number3">Site Radius size</lable>
+                <label for="number3">Site Radius size</label>
                 <input type="number" name="" id="number3" />
               </div>
               <div>
-                <lable for="number4">SVG size</lable>
+                <label for="number4">SVG size</label>
                 <input type="number" name="" id="number4" />
               </div>
               <button id="changeSize">Change Size</button>
@@ -76,15 +77,15 @@
             <h4>Change Font Size</h4>
             <div>
               <div>
-                <lable for="fsize1">Root</lable>
+                <label for="fsize1">Root</label>
                 <input type="number" name="" id="fsize1" />
               </div>
               <div>
-                <lable for="fsize2">Genes</lable>
+                <label for="fsize2">Genes</label>
                 <input type="number" name="" id="fsize2" />
               </div>
               <div>
-                <lable for="fsize3">Sites</lable>
+                <label for="fsize3">Sites</label>
                 <input type="number" name="" id="fsize3" />
               </div>
               <button id="changeFontSize">Change Font size</button>
@@ -119,8 +120,7 @@
           </button>
           <button id="downloadButton">Download SVG</button>
         </div>
-        <!-- <p style="text-align: center;"> <button id="downloadButton">Download SVG</button></p> -->
-      </div>
+        </div>
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
