@@ -135,17 +135,17 @@ function fetchFileData(fileUrl, sheetIndex) {
                 code: ""
             };
 
-            const geneMap = new Map(); //container for the genes
+            const geneMap = new Map(); //container for the Genes
             sheetData.forEach((e, i) => {
-                const gene = e.genes;
-                const site = e.sites;
-                const code = e.code.split("+")[0]
+                const gene = e.Genes;
+                const site = e.Sites;
+                const code = e.Code.split("+")[0]
                 const frequency = e.Frequency
 
                 if (i == 0) {
                     root.name = gene
                     root.children.push({ name: site, frequency, code })
-                    root.code = e.code
+                    root.code = code
                 }
                 else if (root.name == gene) {
                     root.children.push({ name: site, frequency, code })
@@ -167,7 +167,7 @@ function fetchFileData(fileUrl, sheetIndex) {
         })
         .catch(err => {
             console.error("Error Found !!!", err);
-            alert("Error found :", err, " Check your input file with names (genes,sites,code,Frequency) also match the case")
+            alert("Error found :", err, " Check your input file with names (Genes,Sites,Code,Frequency) also match the case")
         })
 }
 
